@@ -12,4 +12,4 @@ The MIT license applies only to the original source code in this repository. The
 - **JESC** — Japanese–English Subtitle Corpus (CC BY-SA 4.0; attribution and share-alike apply if you redistribute derived text).
 - **Wortschatz / Leipzig corpora** — various CC BY (check specific corpus license).
 - **Japanese Wikipedia** — Wikimedia content (CC BY-SA 4.0; share-alike applies).
-- **kanjium** — CC BY-SA 4.0 (see project repo - https://github.com/mifunetoshiro/kanjium).
+- **kanjium** — CC BY-SA 4.0 (see project repo - https://github.com/mifunetoshiro/kanjium - for pitch accent data. The pitch accent notation, verb particle data, phonetics, homonyms and other additions or modifications to EDICT, KANJIDIC or KRADFILE were provided by Uros O. through this free database).
