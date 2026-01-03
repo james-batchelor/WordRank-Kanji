@@ -16,7 +16,7 @@ There are many decks which give kanji and vocabulary in a rough frequency order,
 
 ## WordRank Kanji Features
 
-- Cards are sorted by kanji frequency: You learn kanji which unlock the most vocabulary first. (But some kanji are still grouped by theme, e.g. weather, body parts, ..., and there is a starter set for the very beginning).
+- Cards are sorted by kanji frequency: You learn kanji which unlock the most vocabulary first. (But some kanji are still grouped by theme, e.g. weather, body parts, ..., and there is a starter set for the very beginning.)
 - Vocabulary are also frequency sorted: For each kanji, the words are ordered by how often the kanji appears in each word. 予定/指定/設定 all beat 定まる because 定 appears in each of the others more often.
 - 5k / 10k / >10k vocab markers: The shading of the frequency proportion / percent value tells you how common the word is globally.
 - Audio recordings for words: tap each word for a tts-generated recording. (The speech model isn't perfect, so if the recording doesn't match the written pitch accent, trust what's written.)
