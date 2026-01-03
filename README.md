@@ -23,7 +23,7 @@ There are many decks which give kanji and vocabulary in a rough frequency order,
 - Pitch accent highlighting (Tokyo style): Orange mora for atamadaka, red for nakadaka, purple for odaka, and green for heiban (to distinguish from when the deck doesn't have pitch accent data for the word). If you'd like to learn more then I'd recommend www.kanshudo.com/howto/pitch. You can toggle this on or off by going to Manage note types > WordRank Kanji > css, then change between 1 and 0 as it describes.
 - Stroke order: you can toggle on a stroke order font for card backs in the same way.
 - Katakana reading training: You can also toggle for using katakana in furigana.
-- Built using 24M sentences from diverse linguistic sources: Spoken (movie / anime subtitles, lecture transcripts) and written (literature, wikipedia) sources are both used for balanced learning -- although I skew towards spoken.
+- Built using 24M sentences from diverse linguistic sources: Spoken (movie / TV / anime subtitles, lecture transcripts) and written (internet crawl / social media, literature, wikipedia) sources are both used for balanced learning -- although I skew towards spoken.
 - Buttons linking to Wanikani / Kanji Damage / Kanji Koohi / Jisho: Quick access to mnemonics and references. You can add / remove websites by editing the card back html also.
 - Cards are JLPT level / Jōyō grade tagged: You can filter cards to these tags if that aligns with your goals. The deck includes all Jōyō and JLPT kanji, all in the top 2.5k of pure frequency ranking, and some rarer but useful ones (e.g. sushi menu items).
 
