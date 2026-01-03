@@ -27,7 +27,7 @@ There are many decks which give kanji and vocabulary in a rough frequency order,
 - Buttons linking to Wanikani / Kanji Damage / Kanji Koohi / Jisho: Quick access to mnemonics and references. You can add / remove websites by editing the card back html also.
 - Cards are JLPT level / Jōyō grade tagged: You can filter cards to these tags if that aligns with your goals. The deck includes all Jōyō and JLPT kanji, all in the top 2.5k of pure frequency ranking, and some rarer but useful ones (e.g. sushi menu items).
 
-![image showing example cards with features annotated](https://i.postimg.cc/ry9M2r12/annotated-cards.png)
+![image showing example cards with features annotated](https://i.postimg.cc/3rzhp0MK/annotated-cards.png)
 
 ### Notes on Usage
 
