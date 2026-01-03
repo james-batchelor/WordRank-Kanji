@@ -1,0 +1,397 @@
+/* === Toggle options === */
+/* === 1 - enabled    === */
+/* === 0 - disabled   === */
+
+:root {
+
+  /* Pitch accent colouring on hira/furigana */
+  --pitch-accent-enabled: 1;
+
+  /* Stroke order kanji font on card backs */
+  --strokeorder-enabled: 0;
+
+  /* Use katakana in furigana */
+  --furigana-katakana-enabled: 0;
+
+}
+
+
+/* ====================== */
+
+@font-face {
+  font-family: strokeorder;
+  src: url("_KanjiStrokeOrders_v4.005.ttf");
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* === Card container === */
+.card-back {
+  font-family:
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Yu Gothic UI",
+    "Noto Sans JP",
+    "Meiryo",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  font-size: 18px;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100dvh - 1.1em - env(safe-area-inset-bottom, 0));
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === Main content === */
+.main {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+}
+
+/* === Header elements === */
+.meaning,
+.metadata,
+.onkun,
+.vocab-block {
+  font-size: 1em;
+  font-weight: 400;
+  color: inherit;
+  text-align: center;
+  margin: 0;
+}
+
+.meaning {
+  font-size: 1.1em;
+  line-height: 1.45;
+  font-weight: 450;
+  padding-top: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  letter-spacing: 0.02em;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.kanji {
+  font-size: calc(4em + 1.5em * var(--strokeorder-enabled));
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.1;
+  margin: 0.1em 0;
+  position: relative;
+}
+.kanji-base {
+  -webkit-text-fill-color: inherit;
+  color: inherit;
+  pointer-events: none;
+}
+.kanji-stroke {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: strokeorder;
+  opacity: 0;  /* default off and toggled lower */
+  pointer-events: none;
+}
+
+.metadata {
+  color: #333;
+}
+
+.onkun {
+  text-align: left;
+  line-height: 1.8;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+.onkun .on,
+.onkun .kun {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* === Vocab breakdown === */
+.vocab-block {
+  margin-top: 0.2em;
+  padding: 0 0.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  text-align: left;
+  font-size: 1.05em;
+}
+
+.vocab-line:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+.vocab-line:nth-child(even) {
+  background-color: #fff;
+}
+
+.vocab-line {
+  display: grid;
+  grid-template-columns:
+    3.5ch
+    minmax(7.5ch, max-content)
+    1fr;
+  align-items: baseline;
+  line-height: 1.4;
+  padding: 0.18em 0.4em;
+  border-radius: 4px;
+}
+
+.v-percent {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.v-percent--core {
+  color: #444;
+}
+.v-percent--mid {
+  color: #999;
+}
+.v-percent--tail {
+  color: #d9d9d9;
+}
+
+.pitch-heiban {
+  color: #1f9b5a;
+  filter:
+    grayscale(calc(1 - var(--pitch-accent-enabled)))
+    brightness(calc(0.8 + 0.2 * var(--pitch-accent-enabled)));
+}
+.pitch-atamadaka {
+  color: #f47200;
+  filter:
+    grayscale(calc(1 - var(--pitch-accent-enabled)))
+    brightness(calc(0.8 + 0.2 * var(--pitch-accent-enabled)));
+}
+.pitch-nakadaka {
+  color: #f01616;
+  filter:
+    grayscale(calc(1 - var(--pitch-accent-enabled)))
+    brightness(calc(0.8 + 0.2 * var(--pitch-accent-enabled)));
+}
+.pitch-odaka {
+  color: #c23ad5;
+  filter:
+    grayscale(calc(1 - var(--pitch-accent-enabled)))
+    brightness(calc(0.8 + 0.2 * var(--pitch-accent-enabled)));
+}
+
+.v-vocab {
+  display: flex;
+  align-items: baseline;
+}
+.v-vocab-hit {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+.v-vocab-hit.tappable {
+  cursor: pointer;
+}
+.v-audio {
+  display: none;
+}
+.v-audio .replay-button,
+.v-audio .replaybutton {
+  display: none;
+}
+
+.v-translations {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding-left: 0.5em;
+  color: #222;
+}
+
+.verb-flags {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+  top: -0.1em;
+  font-size: 0.8em;
+  font-weight: 600;
+  line-height: 1;
+  color: #666;
+  background-color: #f9f9fb;
+  border: 1px solid #d5d7df;
+  border-radius: 5px;
+  padding: 0.2em 0.3em 0.1em;
+  margin-right: 0.3em;
+}
+.verb-flags[data-type="一自"],
+.verb-flags[data-type="五自"] {
+  background-color: #fcf6e8;
+  border-color: #f4e6c9;
+  color: #715829;
+}
+.verb-flags[data-type="一他"],
+.verb-flags[data-type="五他"] {
+  background-color: #edf3fc;
+  border-color: #d4e1f5;
+  color: #364d72;
+}
+/*
+.verb-flags[data-type="五自"] {
+  background-color: #edf9f7;
+  border-color: #d6ebe7;
+  color: #35625d;
+}
+.verb-flags[data-type="一他"] {
+  background-color: #fbeeee;
+  border-color: #f1d6d6;
+  color: #743333;
+}
+*/
+
+/* === Links === */
+.links {
+  flex-shrink: 0;
+  padding-top: 2.5em;
+  padding-bottom: 1.3em;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.link-row {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6em;
+}
+
+.link-row a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9em;
+  height: 1.9em;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+  opacity: 0.85;
+  transition: all 0.15s ease-in-out;
+  color: inherit;
+}
+
+
+/* === Hide things on card fronts === */
+.card-front--recognition .meaning,
+.card-front--recognition .metadata,
+.card-front--recognition .onkun,
+.card-front--recognition .links,
+.card-front--recall .kanji,
+.card-front--recall .metadata,
+.card-front--recall .onkun,
+.card-front--recall .vocab-block,
+.card-front--recall .links,
+.card-front--recognition .v-percent,
+.card-front--recognition .v-translations,
+.card-front--recognition ruby rt,
+.card-front--recognition .verb-flags {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-text-fill-color: transparent;
+}
+.card-front--recognition .v-vocab-hit.tappable,
+.card-front--recall .v-vocab-hit.tappable {
+  -webkit-tap-highlight-color: transparent;
+}
+.card-front--recognition .vocab-line {
+  grid-template-columns:
+    3.5ch
+    minmax(7.5ch, auto)
+    1fr;
+}
+.card-front--recognition .pitch-heiban,
+.card-front--recognition .pitch-atamadaka,
+.card-front--recognition .pitch-nakadaka,
+.card-front--recognition .pitch-odaka {
+  color: inherit;
+  filter: none;
+  font-weight: inherit;
+}
+
+/* === Stroke order toggle application === */
+.card-back:not(.card-front--recognition):not(.card-front--recall) .kanji-base {
+  opacity: calc(1 - var(--strokeorder-enabled));
+}
+.card-back:not(.card-front--recognition):not(.card-front--recall) .kanji-stroke {
+  opacity: calc(var(--strokeorder-enabled));
+}
+
+
+/* === Dark + Black mode overrides === */
+@media (prefers-color-scheme: dark) {
+  .card-back {
+    color: #e6e6e6;
+  }
+  .vocab-line:nth-child(odd) {
+    background-color: #222;
+  }
+  .vocab-line:nth-child(even) {
+    background-color: #111;
+  }
+  .metadata {
+    color: #aaa;
+  }
+  .v-percent--core {
+    color: #e6e6e6;
+  }
+  .v-percent--mid {
+    color: #bcbcbc;
+  }
+  .v-percent--tail {
+    color: #777777;
+  }
+  .verb-flags {
+    background-color: #2d2d2d !important;
+    border-color: #555 !important;
+    color: #ccc !important;
+  }
+  .v-translations {
+    color: #ddd;
+  }
+  .link-row a {
+    background-color: #262626;
+    border-color: #3a3a3a;
+    box-shadow: none;
+  }
+  .pitch-heiban {
+    color: #55d49b;
+  }
+  .pitch-atamadaka {
+    color: #ffb066;
+  }
+  .pitch-nakadaka {
+    color: #ff8080;
+  }
+  .pitch-odaka {
+    color: #de8cff;
+  }
+}

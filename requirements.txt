@@ -1,0 +1,11 @@
+google-cloud-texttospeech
+ipykernel
+jaconv
+matplotlib
+numpy
+pandas
+regex
+sudachidict_core
+sudachipy
+pyarrow
+pydub

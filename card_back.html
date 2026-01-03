@@ -1,0 +1,88 @@
+<div class="card-back">
+  <div class="main">
+    <div class="meaning">{{Meaning}}</div>
+    <div class="kanji">
+      <span class="kanji-base">{{Kanji (Note ID)}}</span>
+      <span class="kanji-stroke">{{Kanji (Note ID)}}</span>
+    </div>
+<!--    <div class="metadata">{{Metadata}}</div> -->
+    <div class="onkun">{{OnKun}}</div>
+    <div class="vocab-block">{{Vocab Block}}</div>
+  </div>
+  <div class="links">
+    <div class="link-row">
+      <a
+        href="https://kanji.koohii.com/study/kanji/{{Kanji (Note ID)}}"
+        title="Kanji Koohii">☕</a>
+      <a
+        href="https://www.wanikani.com/kanji/{{Kanji (Note ID)}}"
+        title="WaniKani">🐊</a>
+      <a
+        href="https://www.kanjidamage.com/kanji/search?q={{Kanji (Note ID)}}"
+        title="KanjiDamage">💥</a>
+      <a
+        href="https://jisho.org/search/{{Kanji (Note ID)}}%20%23kanji"
+        title="Jisho">📖</a>
+    </div>
+</div>
+
+
+<script>
+function playVocabAudio(evt) {
+  const vocab = evt.target.closest('.v-vocab-hit[data-audio]');
+  if (!vocab) {
+    return;
+  }
+  const id = vocab.dataset.audio;
+  if (!id) {
+    return;
+  }
+  const container = document.getElementById(id);
+  if (!container) {
+    return;
+  }
+  const btn = container.querySelector('.replay-button, .replaybutton, .soundLink');
+  if (btn) {
+    btn.click();
+  }
+}
+onUpdateHook.push(function () {
+  const vocabs = document.querySelectorAll('.v-vocab-hit[data-audio]');
+  for (const el of vocabs) {
+    el.addEventListener('click', playVocabAudio);
+    el.classList.add('tappable');
+  }
+});
+</script>
+
+<script>
+function hiraToKata(s){
+  if (!s) return s;
+  return Array.from(s).map(ch => {
+    const c = ch.charCodeAt(0);
+    if (c >= 0x3041 && c <= 0x3096) return String.fromCharCode(c + 0x60);
+    return ch;
+  }).join("");
+}
+function convertRtNodesToKatakanaIfEnabled(){
+  const v = getComputedStyle(document.documentElement).getPropertyValue('--furigana-katakana-enabled').trim();
+  if (!(v === '1' || v.toLowerCase() === 'true')) return;
+  document.querySelectorAll('rt').forEach(rt => {
+    (function convert(node){
+      node.childNodes.forEach(child => {
+        if (child.nodeType === Node.TEXT_NODE) {
+          child.textContent = hiraToKata(child.textContent);
+        } else if (child.nodeType === Node.ELEMENT_NODE) {
+          convert(child);
+        }
+      });
+    })(rt);
+  });
+}
+if (typeof onUpdateHook !== "undefined" && Array.isArray(onUpdateHook)) {
+  onUpdateHook.push(convertRtNodesToKatakanaIfEnabled);
+} else {
+  // fallback for other environments
+  document.addEventListener("DOMContentLoaded", convertRtNodesToKatakanaIfEnabled);
+}
+</script>
