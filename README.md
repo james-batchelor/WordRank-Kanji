@@ -17,10 +17,10 @@ There are many decks which give kanji and vocabulary in a rough frequency order,
 ## WordRank Kanji Features
 
 - Cards are sorted by kanji frequency: You learn kanji which unlock the most vocabulary first. (But some kanji are still grouped by theme, e.g. weather, body parts, ..., and there is a starter set for the very beginning.)
-- Vocabulary are also frequency sorted: For each kanji, the words are ordered by how often the kanji appears in each word.
+- Vocabulary are also frequency sorted: For each kanji, the words are ordered by how often the kanji appears in each word. 予定/指定/設定 all beat 定まる because 定 appears in each of the others more often.
 - 5k / 10k / >10k vocab markers: The shading of the frequency proportion / percent value tells you how common the word is globally.
 - Audio recordings for words: tap each word for a tts-generated recording. (The speech model isn't perfect, so if the recording doesn't match the written pitch accent, trust what's written.)
-- Pitch accent highlighting (Tokyo style): Orange mora for atamadaka, red for nakadaka, purple for odaka, and green for heiban (to distinguish from when the deck doesn't have pitch accent data for the word). If you'd like to learn more then I'd recommend www.kanshudo.com/howto/pitch. You can toggle this on or off by going to Manage note types > WordRank Kanji > css, then change between 1 and 0 as it describes.
+- Pitch accent highlighting (Tokyo style): Orange mora for atamadaka, red for nakadaka, purple for odaka, and green for heiban (to distinguish from when the deck doesn't have pitch accent data for the word). If you'd like to learn more then I'd recommend [kanshudo](www.kanshudo.com/howto/pitch). You can toggle this on or off by going to Manage note types > WordRank Kanji > css, then change between 1 and 0 as it describes.
 - Stroke order: you can toggle on a stroke order font for card backs in the same way.
 - Katakana reading training: You can also toggle for using katakana in furigana.
 - Built using 24M sentences from diverse linguistic sources: Spoken (movie / TV / anime subtitles, lecture transcripts) and written (internet crawl / social media, literature, wikipedia) sources are both used for balanced learning -- although I skew towards spoken.
