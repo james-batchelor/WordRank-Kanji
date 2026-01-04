@@ -2,6 +2,8 @@
 
 An anki kanji deck - [AnkiWeb link](https://ankiweb.net/shared/info/1766033327)
 
+\* Important note: make sure you turn off "Don't play audio automatically" for this deck in its deck options!
+
 (This is a personal project which I've wrapped up into a minimal repo, for in case anybody wants to regenerate the deck with their own corpora or weightings. It's not intended to be a library / module, the notebook is the build pipeline. Steps to recreate the deck: prepare txt files in data/ as rows of Japanese sentences, pip install -r requirements.txt, then run the notebook top down. Further optional steps (i.e. audio generation) are explained in the notebook markdown.)
 
 ## The problem
