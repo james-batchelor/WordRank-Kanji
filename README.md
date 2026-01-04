@@ -1,6 +1,6 @@
 # WordRank Kanji
 
-An anki kanji deck - [Ankiweb link](https://ankiweb.net/shared/info/1766033327)
+An anki kanji deck - [AnkiWeb link](https://ankiweb.net/shared/info/1766033327)
 
 (This is a personal project which I've wrapped up into a minimal repo, for in case anybody wants to regenerate the deck with their own corpora or weightings. It's not intended to be a library / module, the notebook is the build pipeline. Steps to recreate the deck: prepare txt files in data/ as rows of Japanese sentences, pip install -r requirements.txt, then run the notebook top down. Further optional steps (i.e. audio generation) are explained in the notebook markdown.)
 
@@ -33,13 +33,15 @@ There are many decks which give kanji and vocabulary in a rough frequency order,
 
 The card backs have a lot of vocabulary, but it's up to you to decide which ones you'll hold yourself to learning. So don't be overwhelmed, it's not sensible to try learn 15 words for every kanji from the start. You'll find that you'll pick up many of those words anyway when you get to the less common kanji in each pair -- 当該 isn't the most common word for 当, but it is for 該.
 
-The main thing the deck doesn't have are example sentences. I think it would be too information-dense for flash card study with everything else it has, and I prefer graded readers for reading practise personally.
+The main thing the deck doesn't have are example sentences. I think it would be too information-dense for flash card study with everything else it has, and I prefer graded readers for reading practice personally.
 
 ### Extra Things
 
 If you prefer a different order for the cards than pure frequency then it's very easy to reorder the deck. You need to prepare a csv file with two columns, one with just each kanji on its own, and the second column the new rank. Then import that csv to anki, merge on the kanji column, and use your ranking column to overwrite the "Deck Order (overwrite this one)" field, which I've left as a placeholder for this purpose. Now that the ordering data is in the deck, go to the card browser (B), sort the cards by the field, ctrl+A, right click and reposition. (If you've already reviewed some cards, then also filter to "is:new" before the ctrl+A.)
 
 Also, some vocab breakdowns don't sum to 100%, because words are only added if definitions and kana readings exist for them in the dictionaries. So really obscure words, hanzi hybrids, or (what's usually the case) most nouns in the corpora are dropped.
+
+For third-party acknowledgements and licenses, please see [THIRD_PARTY_LICENSES.md](https://github.com/james-batchelor/WordRank-Kanji/blob/main/THIRD_PARTY_LICENSES.md).
 
 And finally, I hope you find the deck useful! :)
 
