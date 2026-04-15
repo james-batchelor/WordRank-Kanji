@@ -28,6 +28,10 @@ html, body {
   padding: 0;
 }
 
+ruby > rt {
+  user-select: none;
+}
+
 /* === Card container === */
 .card-back {
   font-family:
