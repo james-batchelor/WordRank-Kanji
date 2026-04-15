@@ -117,7 +117,23 @@ KANJI_OVERRIDES = {
     "牡": "male (animal)",
     "沙": "fine sand; sediment",
     "楊": "poplar",
-    "個": "individual; counter for items"
+    "個": "individual; counter for items",
+    "為": "do; cause; for (the sake of)",
+    "刻": "carve; engrave; mark (time)",
+    "精": "refined; essence; spirit",
+    "渡": "hand over; cross; ferry",
+    "絶": "absolute; sever; cut off",
+    "告": "inform; announce; accuse",
+    "斉": "simultaneous; uniform; even",
+    "勉": "study; exert; diligence",
+    "免": "exemption; excuse; dismissal",
+    "呂": "spine; backbone; bath",
+    "焼": "bake; burn; grill",
+    "弁": "speech; valve; dialect",
+    "頬": "cheeks",
+    "桜": "cherry blossom",
+    "却": "reject; retreat; on the contrary",
+    "里": "village; parent's home; countryside",
 }
 
 READING_OVERRIDES = {
@@ -127,6 +143,7 @@ READING_OVERRIDES = {
     ("明日", "あす"): "あした",
     ("富士山", "ふじやま"): "ふじさん",
     ("茸", "たけ"): "きのこ",
+    ("鶏肉", "けいにく"): "とりにく",
 }
 
 TRANSLATION_OVERRIDES = {  # note katakana
@@ -157,7 +174,6 @@ TRANSLATION_OVERRIDES = {  # note katakana
     ("世界", "セカイ"): "the world; sphere; humanity",
     ("様", "サマ"): "honorific suffix",
     ("死", "シ"): "death; (an) out; death penalty",
-
     ("通", "トオリ"): "passage; traffic; flow (of water, air, etc.)",
     ("別", "ベツ"): "separate; different; distinction",
     ("等", "トウ"): "etc.; and the like; rank",
@@ -176,6 +192,9 @@ TRANSLATION_OVERRIDES = {  # note katakana
     ("風", "カゼ"): "wind; breeze",
     ("検討", "ケントウ"): "consideration; examination; review",
     ("他", "ホカ"): "other; another",
+    ("絶対", "ゼッタイ"): "absolutely; absoluteness",
+    ("渡す", "ワタス"): "to hand over; to ferry across (e.g. a river), to deliver",
+    ("両", "リョウ"): "ryō (Edo-period gold currency unit)",
     
     # GPT5.1 corrections:
     ("十二", "ジュウニ"): "twelve; 12",
@@ -348,7 +367,8 @@ TRANSLATION_OVERRIDES = {  # note katakana
 
 # Rarer than top 2.5k and not jouyou, written rarely but read often (eg on menus)
 DONT_DROP_ME = [
-    "鮪", "鮭", "鯖", "鰤", "鰹", "鰯", "鯵", "蛸", "烏", "老", "蟹", "鰻", "穴", "鱈", "帆", "鰆", "蛤", "粥", "葱", "茸", "饂"
+    "鮪", "鮭", "鯖", "鰤", "鰹", "鰯", "鯵", "蛸", "烏", "老", "蟹", "鰻", "穴", "鱈", "帆", "鰆", "蛤", "粥", "葱", "茸",
+    "饂", "卷", "炙",
 ]
 
 TOP_KANJI_ORDER = [
@@ -378,7 +398,7 @@ SIMILAR_KANJI_GROUPS = [
     ["外", "内"],
     ["明", "昨"],
     ["思", "意", "感", "想", "念"],
-    ["青", "赤", "黄", "黒", "茶", "緑", "紫", "桃", "橙", "紺", "灰", "銀"],
+    ["青", "赤", "黄", "黒", "茶", "緑", "線", "紫", "桃", "橙", "紺", "灰", "銀"],
     ["村", "町", "区", "市", "都", "府", "県", "郡"],
     ["員", "委", "役", "課", "局", "庁", "省", "署", "官"],
     ["番", "号"],
@@ -386,7 +406,7 @@ SIMILAR_KANJI_GROUPS = [
     ["研", "究"],
     ["犬", "猫", "魚", "鳥", "馬", "羊", "豚", "鶏", "肉"],
     ["鮪", "鮭", "鯵", "鯖", "鰹", "鰤", "蟹", "鰻", "蛸", "鱈", "鰯", "鰆", "蛤", "烏", "老", "穴", "帆"],
-    ["通", "道"],
+    ["通", "道", "路", "途"],
     ["朝", "昼", "夜"],
     ["話", "語", "読", "書"],
     ["弟", "姉", "兄", "妹"],
@@ -398,14 +418,14 @@ SIMILAR_KANJI_GROUPS = [
     ["肌", "血", "骨"],
     ["野", "菜", "葱", "芋", "茸"],
     ["飯", "膳", "弁", "丼", "餅", "粥", "汁"],
-    ["焼", "炙", "炊", "炒", "揚", "煮", "蒸", "油", "粉", "卵"],
+    ["焼", "炙", "炊", "炒", "揚", "煮", "蒸", "油", "粉", "卵", "卷"],
     ["麺", "蕎", "饂", "拉"],
     ["初", "始"],
     ["返", "帰"],
     ["代", "変", "替"],
     ["雨", "雲", "雪", "雷", "霧", "霜", "雹", "露"],
     ["晴", "曇", "陰", "風", "嵐"],
-    ["熱", "暑", "暖", "涼", "冷", "寒", "湿", "乾"],
+    ["熱", "暑", "暖", "涼", "冷", "寒", "乾", "湿", "温"],
     ["守", "防"],
     ["個", "枚", "回", "階", "冊", "台", "匹", "頭", "羽"],
     ["在", "存"],
@@ -424,7 +444,7 @@ SIMILAR_KANJI_GROUPS = [
     ["己", "已"],
     ["失", "朱"],
     ["今", "会", "合", "命", "令"],
-    ["申", "由", "甲"],
+    ["由", "甲"],
     ["元", "原", "源"],
     ["体", "休"],
     ["爪", "瓜"],
@@ -432,7 +452,7 @@ SIMILAR_KANJI_GROUPS = [
     ["間", "聞"],
     ["采", "釆"],
     ["募", "寡"],
-    ["史", "更", "使", "便"],
+    ["史", "更", "使", "便", "吏"],
     ["友", "反"],
     ["業", "美"],
     ["法", "洗", "流"],
@@ -459,10 +479,16 @@ SIMILAR_KANJI_GROUPS = [
     ["険", "除"],
     ["鋭", "鈍"],
     ["務", "疑"],
-    ["績", "積"],
-    ["給", "絵"],
     ["豊", "曹"],
     ["船", "航"],
+    ["技", "捜"],
+    ["眉", "頬", "顎", "髭"],
+    ["致", "申", "拝", "伺", "奉"],
+    ["怒", "恨", "嫌", "妬", "羨"],
+    ["喜", "楽", "嬉", "安", "好", "愛", "恋", "誇", "興"],
+    ["悲", "哀", "寂", "淋", "憂"],
+    ["怖", "恐", "緊", "張", "驚"],
+    ["苦", "疲", "悩", "恥", "退"],
 ]
 
 JLPT_LEVELS = {
