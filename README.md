@@ -33,7 +33,7 @@ There are many decks which give kanji and vocabulary in a rough frequency order,
 
 ### Notes on Usage
 
-The card backs have a lot of vocabulary, but it's up to you to decide which ones you'll hold yourself to learning. So don't be overwhelmed, it's not sensible to try learn 15 words for every kanji from the start. You'll find that you'll pick up many of those words anyway when you get to the less common kanji in each pair -- 当該 isn't the most common word for 当, but it is for 該.
+The card backs have a lot of vocabulary, but it's up to you to decide which ones you'll hold yourself to learning. So don't be overwhelmed, it's not sensible to try to learn 15 words for every kanji from the start. You'll find that you'll pick up many of those words anyway when you get to the less common kanji in each pair -- 当該 isn't the most common word for 当, but it is for 該.
 
 The main thing the deck doesn't have are example sentences. I think it would be too information-dense for flash card study with everything else it has, and I prefer graded readers for reading practice personally.
 
