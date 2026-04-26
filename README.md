@@ -47,4 +47,4 @@ For third-party acknowledgements and licenses, please see [THIRD_PARTY_LICENSES.
 
 And finally, I hope you find the deck useful! :)
 
-![image showing the kanji included in the deck as a plot of frequency against jlpt / jouyou level](https://i.postimg.cc/76M97stx/inclusions.png)
+![image showing the kanji included in the deck as a plot of frequency against jlpt / jouyou level](https://i.postimg.cc/76M97stx/inclusions.png?1)
